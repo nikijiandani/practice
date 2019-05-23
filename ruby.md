@@ -13,3 +13,9 @@ When you want to represent a value that will not change in your Ruby program, yo
 When working with `do/end` blocks, prefer `{ }` when the entire code expression fits on one line.
 
 When naming your classes you will use `CamelCase` formatting. `CamelCase` uses no spaces and capitalizes every word.
+
+## Methods
+
+As a documentation convention, methods are listed out with either a `::` or a `#` to indicate two different kinds of publicly accessible methods. Methods denoted by `::` are considered *class methods*, while methods denoted by `#` are considered *instance methods.*
+
+The `::` symbol is used as a namespace in actual Ruby code, while the `#` is used as a comment. **Their use here in Ruby documentation is completely different from their use in actual code.**
