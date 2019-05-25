@@ -19,3 +19,7 @@ When naming your classes you will use `CamelCase` formatting. `CamelCase` uses n
 As a documentation convention, methods are listed out with either a `::` or a `#` to indicate two different kinds of publicly accessible methods. Methods denoted by `::` are considered *class methods*, while methods denoted by `#` are considered *instance methods.*
 
 The `::` symbol is used as a namespace in actual Ruby code, while the `#` is used as a comment. **Their use here in Ruby documentation is completely different from their use in actual code.**
+
+## Parent
+
+In Ruby every class sub-classes from some "parent". The class you're looking at also has access to methods - both instance and class - documented in the parent class.
