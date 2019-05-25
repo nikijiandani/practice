@@ -23,3 +23,8 @@ The `::` symbol is used as a namespace in actual Ruby code, while the `#` is use
 ## Parent
 
 In Ruby every class sub-classes from some "parent". The class you're looking at also has access to methods - both instance and class - documented in the parent class.
+
+## irb
+
+Ruby has a built in interactive environment called "irb" that can be very helpful when writing Ruby code. When you want to exit `irb` back to the command line, just type `exit`.
+
