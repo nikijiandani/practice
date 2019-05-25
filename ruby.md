@@ -28,3 +28,10 @@ In Ruby every class sub-classes from some "parent". The class you're looking at 
 
 Ruby has a built in interactive environment called "irb" that can be very helpful when writing Ruby code. When you want to exit `irb` back to the command line, just type `exit`.
 
+## Running Ruby Code
+
+When you have created a Ruby file, denoted by the `.rb` extension, you can run the code in that file by typing the `ruby` command followed by the file name in the command line.
+
+When you run a Ruby file from the command line, the code gets executed by what's called an **interpreter**.
+
+Sometimes, you'll have a long running Ruby program, or an error in the logic that results an infinite loop. To exit out of the program execution loop, use `control-c`. This will send an abort signal to the running program.
