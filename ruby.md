@@ -43,3 +43,17 @@ The publishing system behind RubyGems is designed to let you download, publish a
 The code in a gem is like pre-packaged bundles of code written by someone to solve a useful problem. A gem is said to have been "cut" when a new version becomes available. All the public installable gems are hosted at http://rubygems.org, though their code is hosted on a code repository, such as a Github.com repository.
 
 The `gem` command allows you to use RubyGems. When combined with the `install` command, one can download and install gems with their dependencies and any relevant documentation. The `Gemfile` offers a simple solution for organizing gems and their dependencies in a central location.
+
+## Debugging Ruby code with Pry
+
+[Pry](https://github.com/pry/pry) is a nifty library that doubles as an alternative to `irb` with a host of awesome features. 
+
+To use pry we'll first have to install it:
+
+`gem install pry`
+
+This gives you the `pry` command which when entered in your terminal will open a new session just like you would with `irb`.
+
+When you want to use `pry` for debugging you'll have to `require "pry"` and insert a `binding.pry` in your file.
+
+What this means is that when your program gets to where `binding.pry` has been declared, it'll open a new `pry` session instead of moving on to the next line in the code. This gives you the opportunity to play around with your variables and objects to see why things are not working. This is an extremely powerful debugging technique since it lets you pause execution to inspect the state of all variables and objects at that line of code. After you're done looking at your variables, you can continue the program execution with `Ctrl + D`.
