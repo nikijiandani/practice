@@ -35,3 +35,11 @@ When you have created a Ruby file, denoted by the `.rb` extension, you can run t
 When you run a Ruby file from the command line, the code gets executed by what's called an **interpreter**.
 
 Sometimes, you'll have a long running Ruby program, or an error in the logic that results an infinite loop. To exit out of the program execution loop, use `control-c`. This will send an abort signal to the running program.
+
+## RubyGems
+
+The publishing system behind RubyGems is designed to let you download, publish and use useful ruby libraries on your system. That system is powered by the website www.rubygems.org. The libraries that the system publishes are called "gems". 
+
+The code in a gem is like pre-packaged bundles of code written by someone to solve a useful problem. A gem is said to have been "cut" when a new version becomes available. All the public installable gems are hosted at http://rubygems.org, though their code is hosted on a code repository, such as a Github.com repository.
+
+The `gem` command allows you to use RubyGems. When combined with the `install` command, one can download and install gems with their dependencies and any relevant documentation. The `Gemfile` offers a simple solution for organizing gems and their dependencies in a central location.
