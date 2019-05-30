@@ -1,8 +1,10 @@
-function merge(arr1, arr2){
-    let result = arr1.concat(arr2).sort((a, b) => a - b);
-    return result;
+function sayHello (){
+    setTimeout(function () {
+        console.log(`${2 + 2}`);
+    }, 3000);
+    setTimeout(function () {
+        console.log(`${3 + 3}`);
+    }, 2000);
+    console.log("This is outside my timeout");
 }
-
-console.log(merge([ 4, 5, 6 ], [ 1, 2, 3, 4 ]), "=?", [ 1, 2, 3, 4, 4, 5, 6 ]);
-console.log(merge([ 4 ], [ 2, 5, 8 ]), "=?", [ 2, 4, 5, 8 ]);
-console.log(merge([ 1, 2, 6 ], []), "=?", [ 1, 2, 6 ]);
+sayHello();
