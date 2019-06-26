@@ -1,41 +1,37 @@
-class Person {
-  constructor (name, quirkyFact) {
-    this.name = name;
-    this.quirkyFact = quirkyFact;
+class Pizza {
+
+  constructor(crust) {
+    this.crust = crust;
+    this.toppings = ["cheese"];
   }
 
-  
+  set Topping(topping) {
+    this.toppings.push(topping);
+  }
+  // setSize now includes data validation
+  set Size(size) {
+    if (size === 's' || size === 'm' || size === 'l') {
+      this._size = size;
+    }
+    // else we could throw an error, return false, etc.
+    // We choose here to ignore all other values!
+  }
+  get Size() {
+    return this._size;
+  }
+  get Price() {
+    const basePrice = 10;
+    const toppingPrice = 2;
+    return basePrice + (this.toppings.length * toppingPrice);
 
-  bio () {
-    return `My name is ${this.name} and here's my quirky fact ${this.quirkyFact}`;
+
+    
   }
 }
 
-class Student extends Person {
-  enroll(cohort) {
-    this.cohort = cohort;
-  }
-  bio () {
-    return `I'm a student at Lighthouse Labs (aka Labber). ${super.bio()}`
-  }
-}
+//DRIVER CODE
 
-class Mentor extends Person {
-  goOnShift () {
-    this.onShift = true;
-  }
-  goOffShift () {
-    this.onShift = false;
-  }
-  bio() {
-    return `I'm a mentor at Lighthouse Labs. ${super.bio()}`
-  }
-}
+let pizza = new Pizza();
 
-const emma = new Student("Emma", "I think that Owls are really cool");
-console.log(emma);
-console.log(emma.bio());
-
-const tim = new Mentor("Tim","I really like airplanes")
-console.log(tim);
-console.log(tim.bio());
+pizza.price;      // instead of getPrice()
+pizza.size = 's'; // instead of setSize(size)
