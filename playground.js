@@ -1,26 +1,41 @@
-// @ts-nocheck
-var wrapLog = function (callback, name) {
-    /* your code here */
-    return function(){
-        let args = [...arguments];
-        let result = callback.apply(null, args);
-        let myArgs = args.join(",");
-        console.log(`${name}(${myArgs}) => ${result}`)
-    }
-  };
+class Person {
+  constructor (name, quirkyFact) {
+    this.name = name;
+    this.quirkyFact = quirkyFact;
+  }
+
   
-  var area = function (x, y) {
-    return x * y;
-  };
-  var logArea = wrapLog(area, "area");
-  
-  logArea(5, 3); // area(5, 3) => 15
-  logArea(3, 2); // area(3, 2) => 6
-  
-  var volume = function (x, y, z) {
-    return x * y * z;
-  };
-  var logVolume = wrapLog(volume, "volume");
-  
-  logVolume(5, 3, 2); // volume(5, 3, 2) => 30
-  logVolume(3, 2, 4); // volume(3, 2, 4) => 24
+
+  bio () {
+    return `My name is ${this.name} and here's my quirky fact ${this.quirkyFact}`;
+  }
+}
+
+class Student extends Person {
+  enroll(cohort) {
+    this.cohort = cohort;
+  }
+  bio () {
+    return `I'm a student at Lighthouse Labs (aka Labber). ${super.bio()}`
+  }
+}
+
+class Mentor extends Person {
+  goOnShift () {
+    this.onShift = true;
+  }
+  goOffShift () {
+    this.onShift = false;
+  }
+  bio() {
+    return `I'm a mentor at Lighthouse Labs. ${super.bio()}`
+  }
+}
+
+const emma = new Student("Emma", "I think that Owls are really cool");
+console.log(emma);
+console.log(emma.bio());
+
+const tim = new Mentor("Tim","I really like airplanes")
+console.log(tim);
+console.log(tim.bio());
